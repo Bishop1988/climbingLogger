@@ -10,20 +10,11 @@ export default defineEventHandler(async (event) => {
         throw createError({ statusCode: 401, message: 'Unauthorized' })
     }
 
-    const {
-        description,
-        title,
-        date
-    } = body
+    const { id } = body
 
-    const data = await prisma.climbs.create({
-        data: {
-            description,
-            title,
-            date,
-            user: user.id
+    return prisma.climbs.delete({
+        where: {
+            id: id
         }
     })
-
-    return data
 })

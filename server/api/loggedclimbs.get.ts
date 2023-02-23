@@ -14,9 +14,10 @@ export default defineEventHandler(async (event) => {
             user: user.id
         },
         select: {
-            content: true,
+            description: true,
             id: true,
-            title: true
+            title: true,
+            date: true
         }
     })
 
