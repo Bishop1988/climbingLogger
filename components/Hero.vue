@@ -1,12 +1,12 @@
 <script setup>
-const user = ref(true)
+const user = ref(false)
 
 const startNow = () => {
     navigateTo("/logclimb")
 }
 
-const login = () => {
-  navigateTo("/login")
+const signup = () => {
+  navigateTo("/signup")
 }
 </script>
 
@@ -15,8 +15,9 @@ const login = () => {
       <div class="z-10 absolute w-full h-full flex justify-center items-center">
         <div class="text-center w-1/2">
           <h1 class="text-8xl font-serif mb-10 text-white">Log your climbs!</h1>
-          <button v-if="user" @click="startNow" class="bg-white px-2 py-1 rounded-md font-bold hover:text-blue-500">Start Now!</button>
-          <button v-else @click="login">Login</button>
+          <!-- <button v-if="user" @click="startNow" class="bg-white px-2 py-1 rounded-md font-bold hover:text-blue-500">Start Now!</button>
+          <button v-else @click="signup" class="bg-white px-2 py-1 rounded-md font-bold hover:text-blue-500">Signup</button> -->
+            <SignUp />
         </div>
       </div>
       <div class="z-1 absolute w-full h-full bg-black opacity-50"></div>
